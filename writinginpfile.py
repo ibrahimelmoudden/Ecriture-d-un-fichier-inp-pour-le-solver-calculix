@@ -134,6 +134,8 @@ def writeHeading(text, nameFile):
 
     f.write(text+ "\n")
 
+    f.close()
+
 
 
 def nodeSetWithXconstraint(dictNodes, X, tolerance,Z = 0):
@@ -295,7 +297,7 @@ def writeSurface(EsetName,direction,fileName,surfaceName):
     
     EsetName : Nom de l'ensemble des éléments définissant la surface
 
-    direction : (Int) 2 = Spos 1 = Sneg
+    direction : (Int) 2 = Spos ; 1 = Sneg
 
     La fonction écrit sur le fichier inp la surface sur laquelle va s'exercer la charge
     
@@ -394,9 +396,9 @@ def writeShellSection(thickness,materialName,fileName):
     """
 
     f = open(fileName,"a")
-
     f.write("*SHELL SECTION, ELSET=Eall, MATERIAL=" + materialName + ", OFFSET=0\n")
     f.write(str(thickness)+"\n")
+    f.close()
 
 
 
@@ -522,7 +524,7 @@ def writeStepStatic(loads,boundaries,temperature,fileName):
 
     # Fichier dat -- Un peu hard codé -- à revoir ultérieurement
 
-    f.write("*NODE PRINT,NSET=Nall\n" + "U\n")   #Nall
+    f.write("*NODE PRINT,NSET=Nall\n" + "U\n")  
 
     f.write("*EL PRINT,ELSET=Eall\n" + "S\n")
             
