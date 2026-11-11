@@ -4,7 +4,7 @@ import numpy as np
 
 Les fonctions suivantes servent à écrire le fichier INP pour une analyse avec le solver CCX  des Shell avec des élements
 
-S8  - Il reste à compléter
+S3,S4,S6,S8  - Il reste à compléter
 
 """
 
